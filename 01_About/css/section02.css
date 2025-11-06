@@ -1,0 +1,1171 @@
+@font-face {
+    font-family: 'D-DIN DIN-Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('D-DIN DIN-Bold'), url('../font/D-DIN-Bold.woff') format('woff');
+}
+
+:root {
+    --background: #000;
+    --component01: #111;
+    --component02: #222;
+    --text01: #FFF;
+    --text02: #AAA;
+    --button: rgba(0, 0, 0, 0.5);
+    --border: 0.5px solid #555; 
+}
+
+.content02 {
+    height: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons {
+    position: absolute;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.buttons button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #0005;
+    border: var(--border);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: all 0.3s ease; 
+}
+
+.buttons button i {
+    font-size: 28px;
+    color: var(--text01);
+}
+
+.buttons button:hover {
+    scale: 1.1;
+    background: #fff;
+}
+
+.buttons button:hover i {
+    color: var(--component01);
+}
+
+.pagenation {
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.pagenation li {
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background: #555;
+    margin: 0 10px;
+    border-radius: 20px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.pagenation li.active {
+    width: 40px;
+    background: #fff;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    max-height: 648px;
+    overflow: hidden;
+}
+
+.slider-wrapper {
+    width: 500%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.grid-content {
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+    display: flex;
+    position: relative;
+    color: var(--text01);
+    gap: 20px;
+}
+
+#grid02 {
+    display: flex;
+}
+
+/* ----------------------- Grid arrow ----------------------- */
+.arrow-1 {
+    height: 5px;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+#grid01 .arrow-1, 
+#grid03 .arrow-1, 
+#grid04 .arrow-1
+{
+    width: 157px;
+    margin-top: 20px;
+}
+
+#grid02 .arrow-1, 
+#grid05 .arrow-1
+{
+    margin-left: 20px;
+}
+
+#grid02 .arrow-1 {
+    width: 222px;
+}
+
+#grid05 .arrow-1 {
+    width: 109px;
+}
+
+.arrow-1:before {
+    content: "";
+    background: currentColor;
+    width: 4px; /* 화살표 머리 크기 */
+    flex-grow: 0.1; /* 처음에는 살짝 오른쪽으로 길게 */
+    clip-path: polygon(
+        0 2px, 
+        calc(100% - 4px) 2px, 
+        calc(100% - 4px) 0, 
+        100% 50%, 
+        calc(100% - 4px) 100%, 
+        calc(100% - 4px) calc(100% - 2px), 
+        0 calc(100% - 2px)
+    );
+    transition: flex-grow 0.5s ease-in-out; /* 부드러운 확장 */
+}
+
+.d-din {
+    font-family: 'D-DIN DIN-Bold';
+}
+
+/* ----------------------- Grid 01 ----------------------- */
+#grid01 .box-left,
+#grid01 .box-right 
+{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100%;
+    gap: 20px;
+    filter: grayscale(100%);
+}
+
+#grid01 .box-center {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#grid01 .center-top {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    gap: 20px;
+    filter: grayscale(100%);
+}
+
+#grid01 .center-center {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    background: url(../img/section02/Grid01-texture.png) no-repeat center;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+#grid01 .center-bottom {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    gap: 20px;
+    filter: grayscale(100%);
+}
+
+#grid01 .left01 {
+    width: 100%;
+    height: 60%;
+    background: url(../img/section02/photo/landscape06.jpeg) no-repeat center;
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+}
+
+#grid01 .left02 {
+    width: 100%;
+    height: 40%;
+    background: url(../img/section04/photo/people01.jpeg) no-repeat center;
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+}
+
+#grid01 .top01 {
+    width: 30%;
+    height: 100%;
+    background: url(../img/section04/photo/profile03.JPG) no-repeat bottom;    
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+}
+
+#grid01 .top02 {
+    width: 70%;
+    height: 100%;
+    background: url(../img/section02/photo/people03.JPG) no-repeat bottom; 
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+}
+
+#grid01 .center {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: var(--border);
+}
+
+#grid01 .bottom01 {
+    width: 70%;
+    height: 100%;
+    background: url(../img/section02/photo/profile04.png) no-repeat center;
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+}
+
+#grid01 .bottom02 {
+    width: 30%;
+    height: 100%;
+    background: url(../img/section04/photo/people05.JPG) no-repeat right;    
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+}
+
+#grid01 .right01 {
+    width: 100%;
+    height: 45%;
+    background: url(../img/section04/photo/person04.jpeg) no-repeat right;    
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+}
+
+#grid01 .right02 {
+    width: 100%;
+    height: 55%;
+    background: var(--component02);
+    background-size: cover;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    border: var(--border);
+    cursor: pointer;
+}
+
+#grid01 .center h1 {
+    font-weight: 700;
+}
+
+#grid01 .right02 h6 {
+    font-weight: 700;
+}
+
+#grid01 .right02:hover .arrow-1:before {
+    flex-grow: 1.5;
+    transition: flex-grow 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* ----------------------- Grid 02 ----------------------- */
+#grid02 .box-left {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    gap: 20px;
+}
+
+#grid02 .box-right, 
+#grid02 .box-center 
+{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;   
+    gap: 20px;
+}
+
+#grid02 .mobile-flex {
+    display: flex;
+    width: 70%;
+    height: 100%;
+    gap: 20px;
+}
+
+#grid02 .left01 {
+    width: 100%;
+    height: 50%;
+    background: url(../img/section02/Grid01-texture.png) no-repeat center;
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+    padding: 30px;
+}
+
+#grid02 .left01 h2 {
+    font-weight: 600;
+    line-height: 120%;
+}
+
+#grid02 .left02 {
+    width: 100%;
+    height: 50%;
+    background: url(../img/section02/Grid02-01.png) no-repeat center;
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+}
+
+#grid02 .center01 {
+    width: 100%;
+    height: 40%;
+    background: url(../img/section02/process/process02.jpeg) no-repeat center;
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#grid02 .center01 h1 {
+    font-weight: 700;
+    padding: 30px;
+    color: var(--text01);
+    text-align: center;
+}
+
+#grid02 .center02 {
+    width: 100%;
+    height: 60%;
+    background: url(../img/section02/Grid02-02.png) no-repeat center;
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+}
+
+#grid02 .right01 {
+    width: 100%;
+    height: 45%;
+    background: url(../img/section02/Grid02-03.png) no-repeat center;
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+}
+
+#grid02 .right02 {
+    width: 100%;
+    height: 45%;
+    background: url(../img/section02/Grid02-04.png) no-repeat center;
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+}
+
+#grid02 .right03 {
+    width: 100%;
+    height: 10%;
+    background: var(--component02);
+    background-size: cover;
+    border-radius: 50px;
+    border: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px;
+    cursor: pointer;
+}
+
+#grid02 .right03 h6 {
+    font-weight: 700;
+}
+
+#grid02 .right03:hover .arrow-1:before {
+    flex-grow: 1.5;
+    transition: flex-grow 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+#grid03,
+#grid04
+{
+    display: flex;
+    flex-direction: column;
+}
+
+/* ----------------------- Grid 03 ----------------------- */
+#grid03 .box-top,
+#grid03 .box-bottom 
+{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;   
+    gap: 20px;
+}
+
+#grid03 .top01 {
+    width: 75%;
+    height: 100%;
+    background: url(../img/section02/Grid03-01.png) no-repeat center;
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+}
+
+#grid03 .top02 {
+    width: 25%;
+    height: 100%;
+    background: url(../img/section02/Grid03-02.png) no-repeat center;
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+}
+
+#grid03 .bottom01 {
+    width: 25%;
+    height: 100%;
+    background: url(../img/section02/Grid03-texture.png) no-repeat center;
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+    padding: 30px;
+}
+
+#grid03 .bottom01 h2 {
+    font-weight: 600;
+    line-height: 120%;
+}
+
+#grid03 .bottom02 {
+    width: 25%;
+    height: 100%;
+    background: url(../img/section02/process/process03.jpeg) no-repeat center;
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 700;
+    padding: 30px;
+    color: var(--text01);
+    text-align: center;
+}
+
+#grid03 .bottom03 {
+    width: 35%;
+    height: 100%;
+    background: url(../img/section02/Grid03-03.png) no-repeat center;
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+}
+
+#grid03 .bottom04 {
+    width: 15%;
+    height: 100%;
+    background: var(--component02);
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 30px;
+    cursor: pointer;
+}
+
+#grid03 .bottom04 h6 {
+    font-weight: 600;
+}
+
+#grid03 .bottom04:hover .arrow-1:before {
+    flex-grow: 1.5;
+    transition: flex-grow 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* ----------------------- Grid 04 ----------------------- */
+#grid04 .box-top,
+#grid04 .box-bottom 
+{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;   
+    gap: 20px;
+}
+
+#grid04 .top01 {
+    width: 35%;
+    height: 100%;
+    background: url(../img/section02/Grid04-texture.png) no-repeat center;
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+    padding: 30px;
+}
+
+#grid04 .top01 h2 {
+    font-weight: 600;
+    line-height: 120%;
+}
+
+#grid04 .top02,
+#grid04 .top03 
+{
+    width: 25%;
+    height: 100%;
+    border-radius: 20px;
+    border: var(--border);
+}
+
+#grid04 .top02 {
+    background: url(../img/section02/Grid04-01.png) no-repeat center;
+    background-size: cover;
+}
+
+#grid04 .top03 {
+    background: url(../img/section02/Grid04-02.png) no-repeat center;
+    background-size: cover;
+}
+
+#grid04 .top04 {
+    width: 15%;
+    height: 100%;
+    background: var(--component02);
+    background-size: cover;
+    border-radius: 20px;
+    border: var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 30px;
+    cursor: pointer;
+}
+
+#grid04 .top04 h6 {
+    font-weight: 600;
+}
+
+#grid04 .top04:hover .arrow-1:before {
+    flex-grow: 1.5;
+    transition: flex-grow 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+#grid04 .bottom01,
+#grid04 .bottom02,
+#grid04 .bottom03,
+#grid04 .bottom04
+{
+    width: 25%;
+    height: 100%;
+    border-radius: 20px;
+    border: var(--border);
+}
+
+#grid04 .bottom01 {
+    background: url(../img/section02/Grid04-03.png) no-repeat center;
+    background-size: cover;
+}
+
+#grid04 .bottom02 {
+    background: url(../img/section02/Grid04-04.png) no-repeat center;
+    background-size: cover;
+}
+
+#grid04 .bottom03 {
+    background: url(../img/section02/Grid04-05.png) no-repeat center;
+    background-size: cover;
+}
+
+#grid04 .bottom04 {
+    background: url(../img/section02/process/process04.jpeg) no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#grid04 .bottom04 h1 {
+    font-weight: 700;
+    padding: 30px;
+    color: var(--text01);
+    text-align: center;
+}
+
+/* ----------------------- Grid 05 ----------------------- */
+#grid05 .box-left {
+    width: 25%;
+    height: 100%;
+}
+
+#grid05 .box-center {
+    width: 50%;
+    height: 100%;
+}
+
+#grid05 .box-right {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 100%;   
+    gap: 20px;
+}
+
+#grid05 .left01 {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: var(--border);
+    background: url(../img/section02/Grid05-texture.png) no-repeat center;
+    background-size: cover;
+    padding: 30px;
+}
+
+#grid05 .left01 h2 {
+    font-weight: 600;
+    line-height: 120%;
+}
+
+#grid05 .center01 {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: var(--border);
+    background: url(../img/section02/Grid05-01.png) no-repeat center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#grid05 .center01 img {
+    width: 45%;
+}
+
+#grid05 .center01 h6 {
+    margin-top: 18px;
+}
+
+#grid05 .right01 {
+    width: 100%;
+    height: 50%;
+    background: url(../img/section02/process/process06.JPG) no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#grid04 .bottom04 h1 {
+    font-weight: 700;
+    padding: 30px;
+    color: var(--text01);
+    text-align: center;
+}
+
+#grid05 .right02 {
+    width: 100%;
+    height: 50%;
+    background: var(--component02);
+    border-radius: 20px;
+    border: var(--border);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+#grid05 .right02 .poster-check {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+}
+
+#grid05 .right02 h6 {
+    font-weight: 600;
+}
+
+#grid05 .right02:hover .arrow-1:before {
+    flex-grow: 1.5;
+    transition: flex-grow 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+
+/* 반응형 사이즈 미디어쿼리 */
+@media screen and (max-width: 768px) {
+    .content02 {
+        margin: 140px 0;
+    }
+
+    .buttons {
+        display: none;
+    }
+
+    .pagenation {
+        bottom: 0;
+        border: 1px solid white;
+    }
+
+    .pagenation li {
+        width: 8px;
+        height: 8px;
+    }
+
+    .slider{
+        height: 100%;
+        width: 89.4%;
+    }
+
+    .grid-content {
+        width: 100%;
+        height: 100%;
+    }
+
+    #grid01 .arrow-1, 
+    #grid03 .arrow-1, 
+    #grid04 .arrow-1
+    {
+        width: 108px;
+        margin-top: 8px;
+    }
+
+    /* ---------------- Grid 01 ---------------- */
+    #grid01 {
+        flex-direction: column;
+    }
+
+    #grid01 .box-left,
+    #grid01 .box-right 
+    {
+        flex-direction: row;
+        width: 100%;
+        height: 25%;
+        gap: 6px;
+    }
+
+    #grid01 .box-center {
+        flex-direction: column;
+        width: 100%;
+        height: 75%;
+        gap: 6px;
+    }
+
+    #grid01 .center-top,
+    #grid01 .center-bottom 
+    {
+        height: 20%;
+        gap: 6px; 
+    }
+
+    #grid01 .center-center {
+        height: 60%;
+    }
+
+    #grid01 .left01 {
+        border-radius: 10px;
+        height: 100%;
+        width: 45%;
+    }
+
+    #grid01 .left02 {
+        border-radius: 10px;
+        height: 100%;
+        width: 55%;
+    }
+
+    #grid01 .top01 {
+        width: 60%;
+        border-radius: 10px;
+    }
+
+    #grid01 .top02 {
+        width: 40%;
+        border-radius: 10px;
+    }
+
+    #grid01 .center {
+        border-radius: 10px;
+    }
+
+    #grid01 .center h1 {
+        font-weight: 600;
+        font-size: 24px;
+    }
+
+    #grid01 .bottom01 {
+        width: 45%;
+        border-radius: 10px;
+    }
+
+    #grid01 .bottom02 {
+        width: 65%;
+        border-radius: 10px;
+    }
+
+    #grid01 .right01 {
+        width: 55%;
+        height: 100%;
+        border-radius: 10px;
+    }
+
+    #grid01 .right02 {
+        width: 45%;
+        height: 100%;
+        border-radius: 10px;
+        padding: 16px;
+    }
+
+    #grid01 .right02 h6 {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    /* ---------------- Grid 02 ---------------- */
+    #grid02 {
+        flex-direction: column;
+    }
+
+    #grid02 .box-left {
+        width: 100%;
+        height: 30%;
+        gap: 6px;
+    }
+
+    #grid02 .box-center,
+    #grid02 .box-right 
+    {
+        width: 50%;
+        height: 100%;
+        gap: 6px;
+    }
+
+    #grid02 .box-center {
+        flex-direction: column-reverse;
+    }
+
+    #grid02 .mobile-flex {
+        width: 100%;
+        height: 70%;
+        gap: 6px;
+    }
+
+    #grid02 .left01 {
+        display: none;
+    }
+
+    #grid02 .left02 {
+        height: 100%;
+        border-radius: 10px;
+        background: url(../img/section02/mobile/Grid02-1.png)
+        no-repeat center;
+        background-size: cover;
+    }
+
+    #grid02 .center01 {
+        height: 30%;
+        border-radius: 10px;
+        background: url(../img/section02/Grid02-texture.png) no-repeat center;
+    }
+
+    #grid02 .center02 {
+        height: 70%;
+        border-radius: 10px;
+        background: url(../img/section02/mobile/Grid02-2.png)
+        no-repeat center;
+        background-size: cover;
+    }
+
+    #grid02 .right01 {
+        height: 45%;
+        border-radius: 10px;
+        background: url(../img/section02/mobile/Grid02-3.png)
+        no-repeat center;
+        background-size: cover;
+    }
+
+    #grid02 .right02 {
+        height: 55%;
+        border-radius: 10px;
+        background: url(../img/section02/mobile/Grid02-4.png)
+        no-repeat center;
+        background-size: cover;
+    }
+
+    #grid02 .right03 {
+        display: none;
+    }
+
+    /* ---------------- Grid 03 ---------------- */
+    #grid03 {
+        flex-direction: row;
+    }
+
+    #grid03 .box-top,
+    #grid03 .box-bottom 
+    {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 100%;   
+        gap: 6px;
+    }
+
+    #grid03 .top01 {
+        background: url(../img/section02/mobile/Grid03-1.png)
+        no-repeat center;
+        background-size: cover;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    #grid03 .top02 {
+        display: none;
+    }
+
+    #grid03 .bottom01 {
+        width: 100%;
+        height: 20%;
+        border-radius: 10px;
+    }
+
+    #grid03 .bottom01 h2:nth-child(2) {
+        display: none;
+    }
+
+    #grid03 .bottom01 > .d-din {
+        font-size: 28px;
+        text-align: center;
+    }
+    
+    #grid03 .bottom02 {
+        width: 100%;
+        height: 55%;
+        background: url(../img/section02/mobile/Grid03-2.png)
+        no-repeat center;
+        background-size: cover;
+        border-radius: 10px;
+    }
+        
+    #grid03 .bottom02 > h1 {
+        display: none;
+    }
+
+    #grid03 .bottom03 {
+        width: 100%;
+        height: 45%;
+        background: url(../img/section02/mobile/Grid03-3.png)
+        no-repeat center;
+        background-size: cover;
+        border-radius: 10px;
+    }
+
+    #grid03 .bottom04 {
+        display: none;
+    }
+
+    /* ---------------- Grid 04 ---------------- */
+    #grid04 {
+        flex-direction: row;
+    }
+
+    #grid04 .box-top,
+    #grid04 .box-bottom 
+    {
+        flex-direction: column;
+        width: 50%;
+        height: 100%;   
+        gap: 6px;
+    }
+
+    #grid04 .box-bottom {
+        flex-direction: column-reverse;
+    }
+
+    #grid04 .top01 {
+        display: none;
+    }
+
+    #grid04 .top02 {
+        width: 100%;
+        height: 26%;
+        border-radius: 10px;
+        background: url(../img/section02/mobile/Grid04-1.png)
+        no-repeat center;
+        background-size: cover;
+    }
+
+    #grid04 .top03,
+    #grid04 .top04
+    {
+        width: 100%;
+        height: 37%;
+        border-radius: 10px;
+    }
+
+    #grid04 .top03 {
+        background: url(../img/section02/mobile/Grid04-2.png)
+        no-repeat center;
+        background-size: cover;
+    }
+    
+    #grid04 .top04 {
+        background: url(../img/section02/mobile/Grid04-4.png)
+        no-repeat center;
+        background-size: cover;
+    }
+
+    #grid04 .top04 h6,
+    #grid04 .top04 .arrow-1 {
+        display: none;
+    }
+
+    #grid04 .bottom01 {
+        display: none;
+    }
+
+    #grid04 .bottom02,
+    #grid04 .bottom03
+    {
+        width: 100%;
+        height: 37%;
+        border-radius: 10px;
+    }
+
+    #grid04 .bottom02 {
+        background: url(../img/section02/mobile/Grid04-5.png)
+        no-repeat center;
+        background-size: cover;
+    }
+
+    #grid04 .bottom03 {
+        background: url(../img/section02/mobile/Grid04-3.png)
+        no-repeat center;
+        background-size: cover;
+    }
+
+    #grid04 .bottom04 {
+        width: 100%;
+        height: 26%;
+        border-radius: 10px;
+        background: url(../img/section02/Grid04-texture.png)
+        no-repeat center;
+        background-size: cover;
+    }
+
+    #grid04 .bottom04 h1 {
+        font-size: 28px;
+    }
+
+    /* ---------------- Grid 05 ---------------- */
+    #grid05 {
+        flex-direction: column-reverse;
+    }
+
+    #grid05 .box-right {
+        flex-direction: row;
+        width: 100%;
+        height: 20%;   
+        gap: 6px;
+    }
+
+    #grid05 .box-center {
+        width: 100%;
+        height: 80%;
+    }
+
+    #grid05 .box-left {
+        display: none;
+    }
+
+    #grid05 .center01 {
+        background: url(../img/section02/mobile/Grid05.png)
+        no-repeat center;
+        background-size: cover;
+        border-radius: 10px;
+    }
+
+    #grid05 .right01 {
+        background: url(../img/section02/Grid05-texture.png)
+        no-repeat center;
+        background-size: cover;
+        border-radius: 10px;
+        width: 50%;
+        height: 100%;
+    }
+    
+    #grid05 .right01 > .d-din {
+        font-size: 28px;
+    }
+
+    #grid05 .right02 {
+        border-radius: 10px;
+        width: 50%;
+        height: 100%;
+    }
+
+    #grid05 .right02 .poster-check {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px;
+    }
+
+    .poster-check > h6 {
+        font-size: 16px;
+    }
+
+    #grid05 .arrow-1 {
+        margin-left: 0;
+        width: 133px;
+    }
+}

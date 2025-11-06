@@ -1,0 +1,396 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(../img/body_back.png) no-repeat center;
+    background-size: cover;
+    /* Pretendard 우선하는 경우 */
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--black);
+    cursor: pointer;
+}
+
+:root {
+    --background: #000;
+    --component01: #111;
+    --component02: #222;
+    --text01: #FFF;
+    --text02: #AAA;
+    --button: rgba(0, 0, 0, 0.5);
+    --border: 1px solid #555;
+}
+
+/* 폰트 크기 */
+h1 {
+    font-size: 4rem;
+    /* 64px */
+    font-weight: 400;
+    /* Regular */
+    letter-spacing: -0.03em;
+    /* 자간-3% */
+    line-height: 1.5;
+    /* 행간 1.5% */
+}
+
+h2 {
+    font-size: 3rem;
+    /* 48px */
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.5;
+}
+
+h3 {
+    font-size: 2.5rem;
+    /* 40px */
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.5;
+}
+
+h4 {
+    font-size: 2rem;
+    /* 32px */
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    line-height: 1.5;
+}
+
+h5 {
+    font-size: 1.75rem;
+    /* 28px */
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.5;
+}
+
+h6 {
+    font-size: 1.5rem;
+    /* 24px */
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.5;
+}
+
+p {
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.5;
+}
+
+.caption {
+    font-size: 1.125rem;
+    /* 18px */
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    /* 자간-1% */
+    line-height: 1.5;
+}
+
+/* header 고정 스타일 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: var(--border);
+    border-radius: 100px;
+    max-width: 1400px;
+    max-height: 64px;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+}
+
+.gnb-left {
+    display: flex;
+    align-items: center;
+}
+
+.gnb-left a {
+    margin: 0 16px 0 32px;
+    width: 15%;
+}
+
+.gnb-left p {
+    font-weight: 300;
+    color: var(--text01);
+    margin-right: 16px;
+}
+
+.gnb-left a img {
+    width: 100%;
+    height: auto;
+}
+
+.gnb-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--text02);
+    margin-right: 8px;
+}
+
+.gnb-right a {
+    width: 98px;
+    text-align: center;
+}
+
+.gnb-right #current p {
+    color: var(--text01);
+    font-weight: 600;
+}
+
+.dmd2023 {
+    background: var(--background);
+    border: var(--border);
+    border-radius: 50px;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.dmd2023 p {
+    margin: 0 14px 0 24px;
+    padding: 8px 0;
+    color: var(--text01);
+}
+
+.dmd2023 i {
+    margin-left: 16px;
+    font-size: 1rem;
+}
+
+.menu {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 2000;
+    display: none;
+}
+
+span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin-bottom: 6px;
+    background: var(--text01); /* 기존 색상 변수 사용 */
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+span:last-child {
+    margin-bottom: 0;
+}
+
+.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.not-active span:nth-child(1),
+.not-active span:nth-child(3) {
+    transform: none;
+}
+
+.not-active span:nth-child(2) {
+    opacity: 1;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0009;
+    backdrop-filter: blur(10px);
+    padding: 50% 0;
+    opacity: 0;
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 20px;
+    color: var(--text01);
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: all .7s ease;
+}
+
+.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+}
+
+#myBtn {
+    display: none;
+    /* 기본적으로 숨김 */
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 99;
+    border: var(--border);
+    background-color: #000;
+    color: white;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 16px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* 나타날 때 부드러운 효과 */
+}
+
+#myBtn.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#myBtn.hide {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-size: cover
+}
+
+/* -------------------- 반응형 -------------------- */
+@media screen and (max-width: 768px) {
+    body {
+        background: url(../img/mobile_back.png) no-repeat center;
+        background-size: cover;
+    }
+    /* 폰트 크기 */
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    h3 {
+        font-size: 32px;
+    }
+
+    h4 {
+        font-size: 28px;
+    }
+
+    h5 {
+        font-size: 24px;
+    }
+
+    h6 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .caption {
+        font-size: 12px;
+    }
+
+    header {
+        display: flex;
+        border-radius: 50px;
+        width: 89.4%;
+        height: 100%;
+        min-height: 44px;
+    }
+
+    .gnb-left a {
+        margin: 0 0px 0 10px;
+    }
+
+    .gnb-left a img {
+        width: 100%;
+        height: auto;
+        margin-left: 20px;
+    }
+
+    .gnb-left p {
+        display: none;
+    }
+
+    .gnb-left img {
+        width: 100%;
+        min-width: 70px;
+        height: auto;
+        margin-left: 20px;
+    }
+
+    .gnb-right {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+        position: absolute;
+        right: 20px;
+        color: var(--text01);
+        font-size: 24px;
+    }
+
+    .mobile-menu a:hover {
+        font-weight: 700;
+        color: var(--text01);
+    }
+}

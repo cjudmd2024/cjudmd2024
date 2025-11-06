@@ -1,0 +1,203 @@
+:root {
+    --background: #000;
+    --component01: #111;
+    --component02: #222;
+    --text01: #FFF;
+    --text02: #AAA;
+    --button: rgba(0, 0, 0, 0.5);
+    --border: 0.5px solid #555;
+    --hover-bg: url(../img/section06/select_texture.png) no-repeat center;
+    --hover-bg-size: cover;
+    --transition-duration: 0.5s;
+}
+
+.content06 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 300px auto;
+    position: relative;
+}
+
+.content06-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.content06-box h2 {
+    font-weight: 600;
+    margin-bottom: 80px;
+    color: var(--text01);
+}
+
+.content06-box .list-container {
+    width: 100%;
+}
+
+#list {
+    border-bottom: var(--border);
+    width: 100%;
+    max-height: 150px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    overflow: visible;
+    transition: all var(--transition-duration) ease-in-out;
+    cursor: pointer;
+}
+
+#list:hover {
+    background: var(--hover-bg);
+    background-size: var(--hover-bg-size);
+}
+
+#list:hover h4 {
+    color: var(--text01);
+    font-weight: 700;
+    font-size: 40px;
+    transition: all var(--transition-duration) cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.list-content {
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 auto;
+    position: relative;
+}
+
+.list-content h4 {
+    width: 80px;
+    color: var(--text01);
+    font-weight: 300;
+    margin-right: 70px;
+    white-space: nowrap;
+}
+
+.student-img {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.student-img img {
+    width: 100%;
+    max-width: 230px;
+    max-height: 290px;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity var(--transition-duration) ease-in-out, transform var(--transition-duration) ease-in-out;
+    border: var(--border);
+    border-radius: 20px;
+}
+
+#list:hover .student-img img {
+    opacity: 1;
+}
+
+/* --------- 반응형 미디어 쿼리 시작 --------- */
+@media screen and (max-width: 768px) {
+    .content06 {
+        margin: 97px auto;
+    }
+
+    .content06-box h2 {
+        font-size: 24px;
+    }
+
+    /* 기본 상태 */
+    #list {
+        border-bottom: var(--border);
+        width: 100%;
+        max-height: 150px;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        overflow: hidden;
+        /* 기본적으로 내용 숨김 */
+        transition: max-height var(--transition-duration) ease-in-out, background var(--transition-duration) ease-in-out;
+        cursor: pointer;
+    }
+
+    /* 확장 상태 */
+    #list.expanded {
+        max-height: 600px;
+        /* 확장된 높이 설정 */
+        background: var(--hover-bg);
+        background-size: var(--hover-bg-size);
+    }
+
+    .list-content {
+        width: 89.4%;
+        height: 50vh;
+        overflow: hidden;
+        /* 기본적으로 콘텐츠 숨김 */
+        transition: max-height var(--transition-duration) ease-in-out;
+    }
+
+    /* 확장 상태 */
+    .list-content.expanded {
+        max-height: 600px;
+        /* 이미지를 포함한 충분한 높이 설정 */
+    }
+
+    .list-content h4 {
+        font-size: 16px;
+    }
+
+    #list:hover {
+        background: var(--hover-bg);
+        background-size: var(--hover-bg-size);
+    }
+
+    #list:hover h4 {
+        color: var(--text01);
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    /* 이미지 정렬 */
+    .student-img {
+        display: flex;
+        flex-wrap: wrap;
+        /* 줄 바꿈 허용 */
+        justify-content: space-between;
+        /* 양쪽 정렬 */
+    }
+
+    .student-img img {
+        width: 40%;
+        /* 두 개씩 나열 */
+        max-height: 176px;
+        object-fit: cover;
+        border-radius: 10px;
+        opacity: 0;
+        transform: scale(0.95);
+        transition: opacity var(--transition-duration) ease-in-out, transform var(--transition-duration) ease-in-out;
+    }
+
+    /* 확장 상태에서 이미지 표시 */
+    #list.expanded .student-img img {
+        opacity: 1;
+        /* 이미지 보임 */
+        transform: scale(1);
+        /* 원래 크기로 */
+    }
+
+    /* 확장 상태 해제 시 */
+    #list:not(.expanded) .student-img img {
+        opacity: 0;
+        /* 이미지 숨김 */
+        transform: scale(0.95);
+        /* 약간 축소 */
+    }
+}

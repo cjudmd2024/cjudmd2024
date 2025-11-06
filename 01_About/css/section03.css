@@ -1,0 +1,182 @@
+:root {
+    --background: #000;
+    --component01: #111;
+    --component02: #222;
+    --text01: #FFF;
+    --text02: #AAA;
+    --button: rgba(85, 85, 85, 0.5);
+    --border: 1px solid #555; 
+}
+
+#poster {
+    width: 100%;
+    height: 150vh;
+}
+
+.content03 {
+    max-width: 1400px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    color: var(--text01);
+}
+
+.content03 .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-poster {
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+    position: relative;
+    border: var(--border);
+}
+
+.left-poster img {
+    width: 100%;
+    height: auto;
+    transition: filter 0.5s ease; /* 부드러운 변환 효과 추가 */
+}
+
+.left-poster:hover img {
+    filter: brightness(0.1); /* 밝기 조절 추가 */
+}
+
+.hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 텍스트를 중앙에 배치 */
+    color: var(--text01);
+    font-size: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hover-text > h5 {
+    margin-bottom: 40px;
+    color: var(--text02);
+}
+
+.hover-text-name {
+    display: flex;
+    gap: 40px;
+    text-align: left;
+}
+
+.name-left,
+.name-right
+{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.name-right h6 {
+    font-weight: 600;
+}
+
+/* 호버 시 텍스트가 보이도록 설정 */
+.left-poster:hover .hover-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+.right-poster-text {
+    margin-left: 5%;
+    padding: 0 20px;
+    word-break: keep-all;
+}
+
+.right-poster-text h2 {
+    font-weight: 600;
+    margin-bottom: 40px;
+    line-height: 57.6px;
+    color: var(--text01);
+}
+
+.right-poster-text p {
+    color: var(--text02);
+    font-weight: 300;
+    line-height: 36px;
+}
+
+.right-poster-text button {
+    background: rgba(85, 85, 85, 0.5);
+    border: 1px solid #555;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 40px; 
+    padding: 14px 24px;
+    font-weight: 600;
+    color: var(--text01);
+    font-size: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#downloadBtn i {
+    margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+
+    #poster {
+        width: 100%;
+        height: 180vh;
+    }
+
+    .content03 {
+        width: 89.4%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .content03 .container {
+        flex-direction: column;
+    }
+
+    .right-poster-text {
+        margin-left: 0;
+        margin-top: 48px;
+        width: 100%;
+        padding: 0;
+        word-break: break-all;
+    }
+
+    .right-poster-text h2 {
+        line-height: 42px;
+        font-size: 32px;
+        margin-bottom: 24px;
+    }
+
+    .right-poster-text p {
+        font-size: 16px;
+        line-height: 28.8px;
+        margin-bottom: 16px;
+    }
+
+    #downloadBtn {
+        margin: 0 auto;
+        display: block;
+        margin-top: 32px;
+        align-items: center;
+        justify-content: center;
+    } 
+
+    #downloadBtn i {
+        margin-left: 8px;
+    }
+}

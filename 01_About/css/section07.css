@@ -1,0 +1,208 @@
+:root {
+    --background: #000;
+    --component01: #111;
+    --component02: #222;
+    --text01: #FFF;
+    --text02: #AAA;
+    --button: rgba(0, 0, 0, 0.5);
+    --border: 1px solid #333; 
+}
+
+.content07 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 180px;
+}
+
+.content07-box {
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+    justify-content: center;
+    align-items: center;
+}
+
+.content07-box h2 {
+    margin-bottom: 80px;
+    font-weight: 700;
+    color: white;
+}
+
+/* -------------------- sliding cards -------------------- */
+.wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper > .container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    gap: 20px;
+}
+
+.card {
+    width: 217px;
+    height: 700px;
+    border-radius: 30px;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    transition: all .6s cubic-bezier(.28,-0.03,0,.99);
+    filter: grayscale(100%); /* 클릭 전 흑백 효과 */
+}
+
+.card > .row {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.card > .row > .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    width: 453px;
+    height: 100%;
+    opacity: 0;
+    padding: 50px 30px;
+    transition-delay: .3s;
+    transition: all .3s ease;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0, 0.9) 100%);
+}
+
+.description h4 {
+    font-weight: 700;
+    color: var(--white-txt);
+}
+
+.border {
+    border: 1px solid #777;
+    margin-top: 20px;
+}
+
+.comment {
+    margin-top: 20px;
+}
+
+input {
+    display: none;
+}
+
+input:checked + label { /* 펼쳐졌을 때 이미지 크기 */
+    width: 453px;
+    height: 700px;
+}
+
+/* 클릭된 카드 스타일 */
+input:checked + label.card {
+    filter: grayscale(0);
+    transition: all .6s cubic-bezier(.28,-0.03,0,.99);
+}
+
+input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.card[for="c1"] {
+    background-image: url('../img/section07/professor_basic/professor01.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.card[for="c2"] {
+    background-image: url('../img/section07/professor_basic/professor02.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.card[for="c3"] {
+    background-image: url('../img/section07/professor_basic/professor03.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.card[for="c4"] {
+    background-image: url('../img/section07/professor_basic/professor04.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.card[for="c5"] {
+    background-image: url('../img/section07/professor_basic/professor05.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* 클릭 후 배경 이미지 교체 */
+input:checked + label.card[for="c1"] {
+    background-image: url('../img/section07/professor_select/professor01.png');
+}
+
+input:checked + label.card[for="c2"] {
+    background-image: url('../img/section07/professor_select/professor02.png');
+}
+
+input:checked + label.card[for="c3"] {
+    background-image: url('../img/section07/professor_select/professor03.png');
+}
+
+input:checked + label.card[for="c4"] {
+    background-image: url('../img/section07/professor_select/professor04.png');
+}
+
+input:checked + label.card[for="c5"] {
+    background-image: url('../img/section07/professor_select/professor05.png');
+}
+
+
+@media screen and (max-width: 768px) {
+    .wrapper > .container {
+        flex-direction: column;
+        gap: 12px;
+        width: 89.4%;
+    }
+
+    .card {
+        width: 335px;
+        height: 72px;
+        border-radius: 10px;
+        border: var(--border);
+        background: var(--component01);
+    }
+    
+    .card[for="c1"] {
+        background-image: none;
+    }
+    
+    .card[for="c2"] {
+        background-image: none;    
+    }
+    
+    .card[for="c3"] {
+        background-image: none;
+    }
+    
+    .card[for="c4"] {
+        background-image: none;
+    }
+    
+    .card[for="c5"] {
+        background-image: none;    
+    }
+
+    input:checked + label {
+        width: 335px;
+        height: 335px;
+    }
+}

@@ -1,0 +1,143 @@
+:root {
+    --background: #000;
+    --component01: #111;
+    --component02: #222;
+    --text01: #FFF;
+    --text02: #AAA;
+    --button: rgba(0, 0, 0, 0.5);
+    --border: 1px solid #555; 
+}
+
+.content05 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.content05 > h2 {
+    color: var(--text01);
+    font-weight: 600;
+    margin-bottom: 100px;
+}
+
+.swiper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1164px;
+    max-height: 649px;
+    min-width: 300px;
+    min-height: 188px;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 60px;
+}
+
+.swiper-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+iframe {
+    border-radius: 20px;
+    border: var(--border);
+    width: 100%;
+    height: 100%;
+}
+
+/* Swiper 페이지네이션 기본 스타일 */
+.swiper-pagination-bullet {
+    width: 10px !important;
+    height: 10px !important;
+    background: #555 !important;
+    margin: 0 10px !important;
+    border-radius: 20px !important;
+    transition: width 0.5s ease, background 0.5s ease !important;
+    cursor: pointer !important;
+}
+
+/* 활성화된 페이지네이션 스타일 */
+.swiper-pagination-bullet-active {
+    width: 40px !important;
+    background: #fff !important;
+}
+
+#youtubeBtn {
+    background: rgba(85, 85, 85, 0.5);
+    border: 1px solid #555;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 14px 24px;
+    font-weight: 600;
+    color: var(--text01);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#youtubeBtn i {
+    margin-left: 8px;
+}
+
+
+/* -------------------- 반응형 -------------------- */
+@media screen and (max-width: 768px) {
+
+    .content05 {
+        width: 100%;
+        height: 100vh;
+        margin-top: 97px;
+    }
+    
+    .content05 h2 {
+        font-size: 24px;
+        margin-bottom: 48px;
+    }
+
+    .swiper-container {
+        width: 89.4%;
+        height: 50%;
+        margin-bottom: 24px;
+    }
+    
+    .swiper-wrapper {
+        width: 89.4%;
+        height: 50%;
+    }
+    
+    .swiper-slide {
+        width: 89.4%;
+        height: 50%;
+    }
+    
+    iframe {
+        border-radius: 10px;
+    }
+
+    #youtubeBtn {
+        margin-top: 48px; 
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    
+    #youtubeBtn i {
+        margin-left: 4px;
+        font-size: 20px;
+    }
+}
