@@ -1,0 +1,193 @@
+:root {
+    --background: #000;
+    --component01: #111;
+    --component02: #222;
+    --text01: #FFF;
+    --text02: #AAA;
+    --button: rgba(0, 0, 0, 0.5);
+    --border: 1px solid #333; 
+}
+
+footer {
+    width: 100%;
+    height: 100vh;
+    max-height: 756px;
+    z-index: 10;
+    margin-top: 1200px;
+}
+
+footer .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 80px;
+}
+
+.top-footer {
+    background: url(../img/footer/footer_back.png) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.top-footer h2 {
+    color: var(--text01);
+    font-weight: 600;
+}
+
+.exhibition-info {
+    margin: 40px 0;
+    display: flex;
+    color: var(--text02);
+}
+
+.info-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-right: 40px;
+}
+
+.info-left .caption {
+    font-weight: 500;
+    color: var(--gray02-txt);
+}
+
+.info-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-right .caption {
+    font-weight: 500;
+    color: var(--gray01-txt);
+}
+
+.bottom-footer {
+    max-width: 1400px;
+    width: 100%;
+    height: 55%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.bottom-footer .copyrights {
+    color: #333;
+}
+
+.bottom-footer-left > img {
+    width: 100%;
+    max-width: 140px;
+}
+
+.bottom-footer-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+#link-icon {
+    width: 60px;
+    height: 60px;
+}
+
+
+/* -------------------- 반응형 -------------------- */
+@media screen and (max-width: 768px) {
+
+    p {
+        font-size: 12px;
+    }
+
+    footer {
+        height: 100vh;
+        max-height: 460px;
+    }
+    
+    footer .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 0;
+    }    
+    
+    .top-footer {
+        background: url(../img/footer/footer_mobile_back.png) no-repeat center;
+        background-size: cover;
+        width: 100%;
+        height: 30%;
+        margin-bottom: 32px;
+    }
+    
+    .top-footer h2 {
+        font-size: 20px;
+    }
+    
+    .exhibition-info {
+        margin: 20px 0;
+        display: flex;
+    }
+    
+    .info-left {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 70px;
+        margin-right: 0;
+    }
+    
+    .info-right {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .info-right .caption {
+        font-weight: 500;
+        color: var(--gray01-txt);
+    }
+    
+    .bottom-footer {
+        width: 89.4%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    
+    .bottom-footer .copyrights {
+        font-size: 12px;
+        margin-bottom: 24px;
+        width: 70%;
+        word-break: keep-all;
+    }
+    
+    .bottom-footer-left > img {
+        width: 30%;
+        min-width: 84px;
+    }
+    
+    .bottom-footer-right {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+    
+    #link-icon {
+        width: 24px;
+        height: 24px;
+    }
+    
+
+}

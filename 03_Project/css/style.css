@@ -1,0 +1,669 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--background);
+    /* Pretendard 우선하는 경우 */
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--black);
+    cursor: pointer;
+}
+
+:root {
+    --background: #000;
+    --component01: #111;
+    --component02: #222;
+    --text01: #FFF;
+    --text02: #AAA;
+    --button: rgba(0, 0, 0, 0.5);
+    --border: 1px solid #555;
+}
+
+/* 폰트 크기 */
+h1 {
+    font-size: 4rem;
+    /* 64px */
+    font-weight: 400;
+    /* Regular */
+    letter-spacing: -0.03em;
+    /* 자간-3% */
+    line-height: 1.5;
+    /* 행간 1.5% */
+}
+
+h2 {
+    font-size: 3rem;
+    /* 48px */
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.5;
+}
+
+h3 {
+    font-size: 2.5rem;
+    /* 40px */
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.5;
+}
+
+h4 {
+    font-size: 2rem;
+    /* 32px */
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    line-height: 1.5;
+}
+
+h5 {
+    font-size: 1.75rem;
+    /* 28px */
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.5;
+}
+
+h6 {
+    font-size: 1.5rem;
+    /* 24px */
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.5;
+}
+
+p {
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.5;
+}
+
+.caption {
+    font-size: 1.125rem;
+    /* 18px */
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    /* 자간-1% */
+    line-height: 1.5;
+}
+
+/* header 고정 스타일 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: var(--border);
+    border-radius: 100px;
+    max-width: 1400px;
+    max-height: 64px;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+}
+
+.gnb-left {
+    display: flex;
+    align-items: center;
+}
+
+.gnb-left a {
+    margin: 0 16px 0 32px;
+    width: 15%;
+}
+
+.gnb-left p {
+    font-weight: 300;
+    color: var(--text01);
+    margin-right: 16px;
+}
+
+.gnb-left a img {
+    width: 100%;
+    height: auto;
+}
+
+.gnb-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--text02);
+    margin-right: 8px;
+}
+
+.gnb-right a {
+    width: 98px;
+    text-align: center;
+}
+
+.gnb-right #current p {
+    color: var(--text01);
+    font-weight: 600;
+}
+
+.dmd2023 {
+    background: var(--background);
+    border: var(--border);
+    border-radius: 50px;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.dmd2023 p {
+    margin: 0 14px 0 24px;
+    padding: 8px 0;
+    color: var(--text01);
+}
+
+.dmd2023 i {
+    margin-left: 16px;
+    font-size: 1rem;
+}
+
+.menu {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 2000;
+    display: none;
+}
+
+span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin-bottom: 6px;
+    background: var(--text01); /* 기존 색상 변수 사용 */
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+span:last-child {
+    margin-bottom: 0;
+}
+
+.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.not-active span:nth-child(1),
+.not-active span:nth-child(3) {
+    transform: none;
+}
+
+.not-active span:nth-child(2) {
+    opacity: 1;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0009;
+    backdrop-filter: blur(10px);
+    padding: 50% 0;
+    opacity: 0;
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 20px;
+    color: var(--text01);
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: all .7s ease;
+}
+
+.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+}
+
+#myBtn {
+    display: none;
+    /* 기본적으로 숨김 */
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 99;
+    border: var(--border);
+    background-color: #000;
+    color: white;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 16px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* 나타날 때 부드러운 효과 */
+}
+
+#myBtn.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#myBtn.hide {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+/* -------------------- 반응형 -------------------- */
+@media screen and (max-width: 768px) {
+    /* 폰트 크기 */
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    h3 {
+        font-size: 32px;
+    }
+
+    h4 {
+        font-size: 28px;
+    }
+
+    h5 {
+        font-size: 24px;
+    }
+
+    h6 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .caption {
+        font-size: 12px;
+    }
+
+    header {
+        display: flex;
+        border-radius: 50px;
+        width: 89.4%;
+        height: 100%;
+        min-height: 44px;
+    }
+
+    .gnb-left a {
+        margin: 0 0px 0 10px;
+    }
+
+    .gnb-left a img {
+        width: 100%;
+        height: auto;
+        margin-left: 20px;
+    }
+
+    .gnb-left p {
+        display: none;
+    }
+
+    .gnb-left img {
+        width: 100%;
+        min-width: 70px;
+        height: auto;
+        margin-left: 20px;
+    }
+
+    .gnb-right {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+        position: absolute;
+        right: 20px;
+        color: var(--text01);
+        font-size: 24px;
+    }
+
+    .mobile-menu a:hover {
+        font-weight: 700;
+        color: var(--text01);
+    }
+}
+
+/* -------------------- contetns 01 -------------------- */
+
+#top-container {
+    position: absolute; 
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; 
+    height: 540px; 
+    display: flex; 
+    justify-content: center; 
+    z-index: 1; 
+    pointer-events: none; 
+}
+
+.top-image {
+    width: 100%; 
+    height: 540px; 
+    display: block; 
+}
+
+.top-text {
+    position: absolute; 
+    top: 300px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    font-family: 'Pretendard', sans-serif; 
+    font-weight: bold;
+    font-size: 60px; 
+    color: #ffffff; 
+    z-index: 2; 
+    white-space: nowrap; 
+}
+
+.top-subtext {
+    position: absolute; 
+    top: 390px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    font-family: 'Pretendard', sans-serif; 
+    font-weight: regular; 
+    font-size: 20px; 
+    color: #aaaaaa; 
+    z-index: 2; 
+    text-align: center;
+    line-height: 36px;
+    white-space: normal; 
+    max-width: 590px;
+    width: 100%;
+}
+.chevron-icon {
+    position: absolute;
+    top: 490px; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: #555555;
+    z-index: 2;
+}
+
+
+/* -------------------- contetns 02 -------------------- */
+.project-container {
+    width: 100%;
+    position: absolute;
+    top: 750px;
+    padding-bottom: 300px;
+}
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: flex-start; /* 왼쪽 정렬 */
+    gap: 20px;
+    padding-left: 10%; /* 왼쪽 패딩을 추가하여 왼쪽 여백을 줌 */
+    padding-right: 10%; /* 오른쪽 패딩을 추가하여 오른쪽 여백을 줌 */
+}
+
+.image-item {
+    width: 19%; 
+    margin-bottom: 2%; /* 하단 여백 */
+    margin: 2%; /* 이미지 간의 여백 */
+    box-sizing: border-box; /* 패딩과 테두리 포함 */
+}
+
+.image-item img {
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+
+/* -------------------- contetns 03 -------------------- */
+
+#button-container {
+    gap: 20px; 
+    position: absolute;
+    top: 600px;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%); 
+    z-index: 1;
+    pointer-events: none; 
+
+}
+
+#box-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    
+}
+
+#interaction-button {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 600; /* Semi Bold*/
+    font-size: 28px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* 텍스트 그림자 추가 */
+    color: #ffffff;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    white-space: nowrap; 
+    background-color: transparent; /* 백그라운드 제거 */
+    border: none; /* 스트로크 제거 */
+    
+}
+
+.arrow {
+    font-size: 28px; 
+    color: #ffffff; 
+    pointer-events: auto;
+}
+
+.arrow-left {
+    margin-right: 60px; 
+}
+
+.arrow-right {
+    margin-left: 60px; 
+}
+
+/* -------------------- contetns 04 -------------------- */
+
+#list-container {
+    display: flex; 
+    align-items: center;
+    white-space: nowrap;
+    position: absolute; 
+    right: calc(12%); 
+    pointer-events: auto;
+}
+
+.list-icon {
+        width: 24px;
+        height: auto;
+        margin-right: 10px;
+    }
+
+.boton-elegante {
+    display: inline-flex; 
+    align-items: center;
+    padding: 15px 25px;
+    border: 2px solid #555555;
+    background-color: rgba(85, 85, 85, 0.5);
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.boton-elegante::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.25) 0%,
+        rgba(255, 255, 255, 0) 70%
+    );
+    transform: scale(0);
+    transition: transform 0.5s ease;
+}
+
+.boton-elegante:hover::after {
+    transform: scale(4);
+}
+
+.boton-elegante:hover {
+    border-color: #666666;
+    background: #292929;
+}
+
+/* --------------------초소형 기기용 스타일 (768px 이하) -------------------- */
+@media (max-width: 768px) {
+    #top-container {
+        height: 405px; 
+    }
+
+    .top-image {
+        height: 400px;  
+    }
+
+    .top-text {
+        top: 210px; 
+        font-size: 40px; 
+        white-space: nowrap; 
+    }
+
+    .top-subtext br {
+        display: none; 
+    }
+
+    .top-subtext {
+        top: 275px; 
+        font-size: 16px; 
+        line-height: 29px;
+        font-weight: 400; 
+        max-width: 350px;
+        width: 100%; 
+    }
+
+    .chevron-icon {
+        top: 380px; 
+    }
+
+    /* -------------------- contetns 02 -------------------- */
+.project-container {
+    top: 630px;
+    padding-bottom: 100px; 
+    margin: 0 auto;
+    padding-left: 5%; 
+    padding-right: 5%;
+}
+
+.image-item {
+    width: 40%; 
+    margin-bottom: 2%; 
+    margin: 2%; 
+    box-sizing: border-box; 
+}
+
+.image-item img {
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+/* -------------------- contetns 03 -------------------- */
+
+    #button-container {
+        top: 500px;
+    }
+
+    #interaction-button {
+        font-size: 20px;
+    }
+    
+    .arrow {
+        font-size: 24px; 
+    }
+    
+    .arrow-left {
+        margin-right: 30px; 
+    }
+    
+    .arrow-right {
+        margin-left: 30px; 
+    }
+    
+    #list-container {
+        right: calc(8%); 
+        margin-top: 20px;
+    }
+    
+    .list-icon {
+            width: 24px;
+            margin-right: 0px;
+        }
+    
+    .boton-elegante {
+        padding: 12px;
+    }
+}
