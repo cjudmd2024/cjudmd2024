@@ -297,18 +297,26 @@ section {
 
 .bg-video {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
   z-index: -1;
 }
 
-.bg-video__content {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  background-size: cover;
+.bg-video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 56.25vw; /* 16:9 비율 */
+  min-height: 100vh;
+  min-width: 177.77vh; /* 16:9 비율 */
+  pointer-events: none; /* 클릭 방지 */
 }
 
 /* -------------------- 반응형 -------------------- */
